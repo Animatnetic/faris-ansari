@@ -3,6 +3,7 @@
 
 * {
     margin: 0;
+    padding: 0;
     font-family: "Rubik", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -12,13 +13,14 @@
 
 
 .intro-block {
+    min-height: 100vh;
     color: #78A083;
     font-size: 50vh;
-    max-width: fit-content;
-    text-align: left;
-    width: fit-content;
+    min-width: fit-content;
     flex-direction: row;
+    height: 100%;
 }
+
 
 .greeting {
     font-size: 70vh;
