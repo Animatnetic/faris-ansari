@@ -1,0 +1,40 @@
+/* color palette: https://colorhunt.co/palette/35374b34495550727b78a083 */
+
+
+* {
+    margin: 0;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #35374B;
+    color: #78A083;
+}
+
+
+.intro-block {
+    color: #78A083;
+    font-size: 50vh;
+    max-width: fit-content;
+    text-align: left;
+    width: fit-content;
+    flex-direction: row;
+}
+
+.greeting {
+    font-size: 70vh;
+}
+
+em {
+    color: #50727B;
+    font-style: normal;
+    font-weight: 900;
+}
+
+.intro-block span {
+    display: block;
+}
+
+.statement-block {
+    padding-top: 20%;
+    font-size: 10vw;
+}
