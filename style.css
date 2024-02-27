@@ -1,40 +1,46 @@
 /* color palette: https://colorhunt.co/palette/35374b34495550727b78a083 */
 
 
-* {
+body {
     margin: 0;
     font-family: "Rubik", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
     background-color: #35374B;
     color: #78A083;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 
-.intro-block {
-    color: #78A083;
-    font-size: 50vh;
-    max-width: fit-content;
-    text-align: left;
-    width: fit-content;
-    flex-direction: row;
+h1 div {
+    font-size: 35vh;
+    height: 100vh;
 }
+
+
+@keyframes example {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 
 .greeting {
-    font-size: 70vh;
+    opacity: 0;
+    animation-name: example;
+    animation-delay: 0.01s;
+    animation-timing-function: ease-in;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
 }
+
 
 em {
+    font-weight: bolder;
     color: #50727B;
     font-style: normal;
-    font-weight: 900;
-}
-
-.intro-block span {
-    display: block;
-}
-
-.statement-block {
-    padding-top: 20%;
-    font-size: 10vw;
 }
