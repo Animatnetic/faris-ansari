@@ -50,3 +50,14 @@ em {
 .statement-block {
     background-color: #344955;
 }
+
+
+.curve-break {
+    aspect-ratio: 900/675;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url("curve.png");
+    margin: 0;
+}
