@@ -56,7 +56,7 @@ em {
 }
 
 
-.curve-break {
+/* .curve-break {
     aspect-ratio: 900/675;
     width: 100%;
     background-repeat: no-repeat;
@@ -64,7 +64,7 @@ em {
     background-size: contain;
     background-image: url("curve.svg");
     margin: 0;
-}
+} */
 
 section {
     margin: 0;
@@ -73,5 +73,17 @@ section {
 
 .statement-block {
     background-color: #344955;
-    line-height: 0;
+    line-height: 10;
+    aspect-ratio: 900/675;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url("curve.svg");
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
 }
+
+
