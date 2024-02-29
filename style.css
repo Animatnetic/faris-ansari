@@ -56,21 +56,6 @@ section {
     padding: 0;
 }
 
-.statement-block {
-    background-color: #344955;
-    line-height: 10;
-    aspect-ratio: 900/675;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-image: url("curve.svg");
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-}
-
 .binary-padding {
     color: #50727B;
     font-family: "Source Code Pro", monospace;
@@ -83,4 +68,24 @@ p.binary-padding {
     line-break: break-all;
     white-space: normal;
     text-wrap: wrap;
+}
+
+
+.statement-block {
+    background-color: #35374B;
+    aspect-ratio: 900/675;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url("curve.svg");
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.statement-block h2 {
+    padding: 20%;
+    font-size: xx-large;
 }
