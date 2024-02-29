@@ -86,4 +86,13 @@ section {
     flex-direction: row;
 }
 
+.binary-padding {
+    font-family: "Source Code Pro", monospace;
+    color: #50727B;
+    font-weight: lighter;
+    font-size: larger;
+}
 
+h1 .binary-padding {
+    font-size: smaller;
+}
