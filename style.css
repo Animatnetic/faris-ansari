@@ -11,6 +11,17 @@ body {
 }
 
 
+.decipher {
+    &::before {
+        content: attr(data-before);
+    }
+
+    &::after {
+        content: attr(data-after);
+    }
+}
+
+
 h1 div {
     font-size: 35vh;
     height: 100vh;
@@ -39,6 +50,7 @@ em {
     font-weight: bolder;
     color: #50727B;
     font-style: normal;
+    height: fit-content;
 }
 
 
@@ -115,6 +127,7 @@ ul li {
     margin: 2%;
     justify-content: space-around;
 }
+
 
 .skills-element {
     display: flex;
