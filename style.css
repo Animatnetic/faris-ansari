@@ -11,6 +11,7 @@ body {
 }
 
 
+
 .decipher {
     &::before {
         content: attr(data-before);
@@ -124,7 +125,7 @@ ul {
 
 ul li {
     display: flex;
-    margin: 2%;
+    margin: 5%;
     justify-content: space-around;
 }
 
@@ -133,7 +134,9 @@ ul li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: min-content;
     border: #ffffff;
     border-style: solid;
     border-color: #344955;
@@ -141,4 +144,13 @@ ul li {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.skills-element img {
+    aspect-ratio: 1/1;
+}
+
+
+.skills-element:hover {
+    box-shadow: 5px 5px 5px #344955;
 }
