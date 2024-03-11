@@ -7,7 +7,7 @@ body {
     font-family: "Rubik", sans-serif;
     background-color: #35374B;
     color: #78A083;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 
@@ -153,4 +153,8 @@ ul li {
 
 .skills-element:hover {
     box-shadow: 5px 5px 10px #344955;
+}
+
+p {
+    overflow-wrap: break-word;
 }
