@@ -1,5 +1,5 @@
 var binaryChars = ["0", "1"]; // Characters I literally only want to be scrambled are 0 and 1
-var decipheringElements = [] // Array which stores the element that the "decoding" animation is currently doing the animaiton
+var decipheringElements = []; // Array which stores the element that the "decoding" animation is currently doing the animaiton
 
 function randomCharIndex() {
     return Math.floor(Math.random() * binaryChars.length);
@@ -38,8 +38,6 @@ async function initializeDecodingEffect(string, element) {
             if (length === -1) {
                 clearInterval(gen); 
                 decipheringElements.splice(decipheringElements.indexOf(element), decipheringElements.indexOf(element) + 1);
-                console.log(decipheringElements);
-                console.log("Stopped animating");
             };
         };
 
@@ -56,7 +54,6 @@ const observer = new IntersectionObserver((entries) => {
             if (!decipheringElements.includes(el)) {
                 initializeDecodingEffect(originalText, el);
                 decipheringElements.push(el);
-                console.log(decipheringElements);
             };
 
         };
@@ -64,8 +61,20 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 const hiddenElements = document.querySelectorAll(".decipher");
+const binaryPaddingElements = document.querySelectorAll(".binary-padding");
+
 hiddenElements.forEach((element, key) => {
     observer.observe(element);
 });
 
-console.log("Checking for async stuff");
+binaryPaddingElements.forEach((element, key) => {
+    console.log(element.tagName)
+    if (element.tagName == "P") {
+        for (let i = 0; i < 10; i ++) {
+            console.log("Looping")
+            element.innerHTML += `<p class="binary-row">${randomString(50)}</p>`;
+        };
+    } else {
+        element.textContent += randomString(300);
+    };
+});

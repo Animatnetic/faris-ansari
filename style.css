@@ -7,7 +7,7 @@ body {
     font-family: "Rubik", sans-serif;
     background-color: #35374B;
     color: #78A083;
-    /* overflow-x: hidden; */
+    overflow-x: clip;
 }
 
 
@@ -57,7 +57,6 @@ em {
 
 .name {
     height: fit-content;
-    text-wrap: wrap;
 }
 
 .statement-block {
@@ -78,9 +77,16 @@ section {
 
 p.binary-padding {
     margin: 0;
-    line-break: break-all;
     white-space: normal;
     text-wrap: wrap;
+    width: 120%;
+}
+
+
+.binary-row {
+    text-wrap: nowrap;
+    height: fit-content;
+    margin: 0;
 }
 
 
