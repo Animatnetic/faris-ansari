@@ -2,7 +2,12 @@
 /* Curvy backgrounds: https://app.haikei.app */
 
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    padding-top: 4vh;
     margin: 0;
     font-family: "Rubik", sans-serif;
     background-color: #35374B;
@@ -10,7 +15,46 @@ body {
     overflow-x: hidden;
 }
 
+.main-navbar {
+    left: 25%;
+    top: 3vh;
+    width: 50%;
+    padding: 10px;
+    position: fixed;
+    z-index: 100;
+    background: rgba(52, 73, 85, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.4px);
+    -webkit-backdrop-filter: blur(2.7px);
+    border: 1px solid rgba(52, 73, 85, 0.2);
+}
 
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+}
+
+.main-navbar ul {
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.main-navbar li {
+    padding: 10px;
+}
+
+.main-navbar a {
+    color: #78A083;
+    text-decoration: none;
+    font-size: larger;
+}
 
 .decipher {
     &::before {
@@ -115,13 +159,6 @@ section {
     align-items: center;
 }
 
-
-ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-}
-
 .skills-element {
     display: flex;
     flex-direction: column;
@@ -131,10 +168,6 @@ ul {
     padding-top: 25px;
     width: min-content;
     border-style: solid;
-    border-radius: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin: 1vw;
     background: rgba(52, 73, 85, 0.17);
     border-radius: 16px;
