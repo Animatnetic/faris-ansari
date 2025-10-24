@@ -7,7 +7,7 @@ body {
     font-family: "Rubik", sans-serif;
     background-color: #35374B;
     color: #78A083;
-    overflow-x: clip;
+    overflow-x: hidden;
 }
 
 
@@ -73,22 +73,16 @@ section {
     font-family: "Source Code Pro", monospace;
     font-weight: lighter;
     font-size: 10vh;
+    white-space: no-wrap;
+    transition: transform 0.1s ease-out;
 }
-
-p.binary-padding {
-    margin: 0;
-    white-space: normal;
-    text-wrap: wrap;
-    width: 120%;
-}
-
 
 .binary-row {
     text-wrap: nowrap;
     height: fit-content;
     margin: 0;
+    display: block; 
 }
-
 
 .statement-block {
     background-color: #35374B;
@@ -106,7 +100,7 @@ p.binary-padding {
 }
 
 .statement-block h2 {
-    padding-top: 20%;
+    padding-top: 10vh;
     font-size: xx-large;
 }
 
@@ -128,37 +122,47 @@ ul {
     justify-content: center;
 }
 
-
-ul li {
-    display: flex;
-    margin: 5%;
-    justify-content: space-around;
-}
-
-
 .skills-element {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 25px;
     width: min-content;
-    border: #ffffff;
     border-style: solid;
-    border-color: #344955;
     border-radius: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 1vw;
+    background: rgba(52, 73, 85, 0.17);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.7px);
+    -webkit-backdrop-filter: blur(2.7px);
+    border: 1px solid rgba(52, 73, 85, 0.2);
+}
+
+.class-logo {
+    width: 100px;
+    height: 100px;
+    background-color: #78A083;
+    mask-image: url("https://icons.iconarchive.com/icons/icons8/ios7/512/Data-Database-icon.png");
+    mask-repeat: no-repeat;
+    mask-size: contain;
 }
 
 .skills-element img {
     aspect-ratio: 1/1;
+    width: 100px;
+    height: 100px;
 }
 
 
 .skills-element:hover {
-    box-shadow: 5px 5px 10px #344955;
+    /* box-shadow: 5px 5px 5px #344955; */
+    box-shadow: 0 4px 8px 0 #344955, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 p {

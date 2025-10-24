@@ -1,10 +1,17 @@
 var binaryChars = ["0", "1"]; // Characters I literally only want to be scrambled are 0 and 1
 var decipheringElements = []; // Array which stores the element that the "decoding" animation is currently doing the animaiton
 
+const hiddenElements = document.querySelectorAll(".decipher");
+const binaryPaddingElements = document.querySelectorAll(".binary-padding");
+
+let parallaxElements = [];
+const elementsData = [];
+
+let isTicking = false;
+
 function randomCharIndex() {
     return Math.floor(Math.random() * binaryChars.length);
 };
-
 
 function randomString(amount)  {
     var string = "";
@@ -15,7 +22,6 @@ function randomString(amount)  {
 
     return string;
 };
-
 
 async function initializeDecodingEffect(string, element) {
     var length = string.length;
@@ -60,21 +66,58 @@ const observer = new IntersectionObserver((entries) => {
     }); // Think of this goofy syntax with "callback" function as rather the ":Connect()" function like it is in roblox lua for events
 });
 
-const hiddenElements = document.querySelectorAll(".decipher");
-const binaryPaddingElements = document.querySelectorAll(".binary-padding");
-
 hiddenElements.forEach((element, key) => {
     observer.observe(element);
 });
 
 binaryPaddingElements.forEach((element, key) => {
-    console.log(element.tagName)
-    if (element.tagName == "P") {
+    if (element.tagName == "DIV") {
         for (let i = 0; i < 10; i ++) {
-            console.log("Looping")
-            element.innerHTML += `<p class="binary-row">${randomString(50)}</p>`;
+            const binaryRowSpan = document.createElement("span");
+            binaryRowSpan.classList.add("binary-row");
+            binaryRowSpan.textContent = randomString(100);
+            element.appendChild(binaryRowSpan);
+
+            parallaxElements.push(binaryRowSpan);
         };
     } else {
-        element.textContent += randomString(300);
+        element.textContent += randomString(100);
     };
 });
+
+parallaxElements.forEach(element => {
+    const factor = (Math.random() - 0.5) * 1.5;
+    elementsData.push({
+        element: element,
+        factor: factor
+    });
+});
+
+function applyParallax() {
+    const scrollY = window.scrollY;
+
+    elementsData.forEach(item => {
+        const { element, factor }  = item;
+        const offsetX = (scrollY * factor * 0.4) - (window.innerWidth / 2);
+        element.style.transform = `translateX(${offsetX}px)`;
+    })
+}
+
+window.addEventListener("scroll", () => {
+    if (!isTicking) { 
+        window.requestAnimationFrame(() => {
+            applyParallax();
+            isTicking = false;
+        });
+
+        isTicking = true;
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+ setTimeout(() => {
+    applyParallax();
+ }, 50);
+});
+
