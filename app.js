@@ -1,8 +1,23 @@
-var binaryChars = ["0", "1"]; // Characters I literally only want to be scrambled are 0 and 1
+import projectsInfo from "./projectsInfo.json" with { type: "json" };
+
+const binaryChars = ["0", "1"]; // Characters I literally only want to be scrambled are 0 and 1
 var decipheringElements = []; // Array which stores the element that the "decoding" animation is currently doing the animaiton
 
 const hiddenElements = document.querySelectorAll(".decipher");
 const binaryPaddingElements = document.querySelectorAll(".binary-padding");
+
+const PROJECT_NAME_DECOR = "🔗";
+
+const screen = document.getElementById("screen");
+const projectNameHeader = document.getElementById("project-name");
+const projectLinkElement = document.getElementById("project-link");
+const projectTagsContainer = document.getElementById("tags-container");
+const descriptionTextElement = document.getElementById("description-text");
+const projectImageElement = document.getElementById("project-image");
+
+const forwardProjectButton = document.getElementById("forward-project");
+const backProjectButton = document.getElementById("back-project");
+let currentProjectIndex = 0;
 
 let parallaxElements = [];
 const elementsData = [];
@@ -49,6 +64,35 @@ async function initializeDecodingEffect(string, element) {
 
     }, 32);
 };
+
+
+function showProjectDetailsAtIndex(index) {
+    let projectData = projectsInfo[index];
+
+    projectNameHeader.innerText = `${PROJECT_NAME_DECOR} ${projectData.Name}`;
+    projectLinkElement.setAttribute("href", projectData.Link);
+    
+    let spanChildren = projectTagsContainer.querySelectorAll("span");
+    
+    for (let spanIndex = 0; spanIndex < spanChildren.length; spanIndex ++) { 
+        console.log(projectData.Tags[spanIndex]);
+        spanChildren[spanIndex].innerText = projectData.Tags[spanIndex];
+    }
+
+    descriptionTextElement.innerText = projectData.Description;
+    projectImageElement.setAttribute("src", projectData.Image);
+
+
+    screen.style.opacity = "0";
+    screen.classList.remove("roll-in");
+
+    setTimeout(() => {
+        void screen.offsetWidth;
+        
+        screen.style.opacity = "1";
+        screen.classList.add("roll-in");
+    }, 300);
+}
 
 
 const observer = new IntersectionObserver((entries) => {
@@ -120,4 +164,29 @@ document.addEventListener("DOMContentLoaded", () => {
     applyParallax();
  }, 50);
 });
+
+
+showProjectDetailsAtIndex(0);
+
+
+forwardProjectButton.onclick = () => {
+    currentProjectIndex += 1;
+
+    if (currentProjectIndex > projectsInfo.length) {
+        currentProjectIndex = 0; // clamping it
+    }
+
+    showProjectDetailsAtIndex(currentProjectIndex);
+};
+
+
+backProjectButton.onclick = () => {
+    currentProjectIndex -= 1;
+
+    if (currentProjectIndex < 0) {
+        currentProjectIndex = projectsInfo.length - 1;
+    }
+
+    showProjectDetailsAtIndex(currentProjectIndex);
+};
 

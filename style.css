@@ -51,9 +51,15 @@ ul {
 }
 
 .main-navbar a {
+    border-radius: 16px;
+    padding: 10px;
     color: #78A083;
     text-decoration: none;
     font-size: larger;
+}
+
+.main-navbar a:hover {
+    background-color: #50727B;
 }
 
 .decipher {
@@ -79,6 +85,15 @@ div {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.project-container div {
+    margin: 0;
+    padding: 0;
+    text-wrap: wrap;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 
 @keyframes example {
     from {
@@ -144,7 +159,27 @@ section {
 }
 
 .statement-block h2 {
-    padding-top: 10vh;
+    margin-top: 15vh;
+    font-size: xx-large;
+}
+
+.my-projects-block {
+    background-color: #35374B;
+    aspect-ratio: 900/675;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("curve2.svg");
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.my-projects-block h2 {
+    margin-top: 25vh;
     font-size: xx-large;
 }
 
@@ -196,6 +231,114 @@ section {
 .skills-element:hover {
     /* box-shadow: 5px 5px 5px #344955; */
     box-shadow: 0 4px 8px 0 #344955, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.computer-monitor {
+    width: 50%;
+    display: grid;
+    justify-items: center;
+    aspect-ratio: 101/107.5;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("Monitor.svg");
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.screen-container {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    top: 15%;
+    width: 70%;
+    height: 50%;
+    color: #78A083;
+    display: block;
+    position: relative;
+    transition: transform 0s, opacity 0s;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    1% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.screen.roll-in {
+    transform: translateY(-100%);
+    opacity: 0;
+    animation: slideDown 0.8s steps(20, end) forwards; 
+    position: relative; 
+}
+
+.project-container {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+#project-link {
+    text-decoration: none;
+    color: #78A083;
+}
+
+.tags-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tag {
+    font-weight: bold;
+    padding-inline: 5%;
+    padding-block: 5%;
+    background-color: #35374B;
+    border-radius: 16px;
+    font-size: small;
+    min-width: 30px;
+    text-align: center;
+}
+
+.description-container {
+    margin: 1%;
+    width: 50%;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.description-container p {
+    width: 100%;
+}
+
+.project-image {
+    width: 50%;
+    height: 50%;
+    border-radius: 16px;
+}
+
+.project-selectors {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: #78A083;
+}
+
+button:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 p {

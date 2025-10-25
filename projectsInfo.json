@@ -1,0 +1,23 @@
+[
+    {
+        "Name": "SignGuru",
+        "Link": "https://apps.apple.com/ae/app/signguru-learn-asl/id6472342585",
+        "Tags": ["AI/ML", "Vision", "iOS"],
+        "Description": "SignGuru is an American Sign Language learning app that uses computer vision and AI to make the learning hands-on. It uses the device's front camera to look at the user's hand to determine what letter of the ASL they are signing. This project won the iOS Design Challenge 2023 of the UAE and is available on the App Store.",
+        "Image": "SignGuruLogo.png"
+    },
+    {
+        "Name": "ToSsed!",
+        "Link": "https://tossed-away.vercel.app/",
+        "Tags": ["AI/ML", "Full Stack", "Hackathon"],
+        "Description": "ToSsed! is a tool used to summarize and rate inputted Terms of Service text. This summary is ordered in terms of severity, with major, moderate, and minor infractions. It was part of the Falcon hackathon by lablab.ai, where I was among the first few developers to use the UAE's very own Falcon-180B LLM.",
+        "Image": "TossedLogo.svg"
+    }, 
+    {
+        "Name": "Black Ridge",
+        "Link": "https://www.roblox.com/games/18489839897/SP-Black-Ridge",
+        "Tags": ["Game", "Roblox", "Technical Lead"],
+        "Description": "This was my first serious attempt at making a game. Black Ridge is a fictional research facility that contains anomalous entities inspired by the Half-Life series. As the technical lead, this was my first look into designing extensive systems, such as gun mechanics, virtual trains, doors, and the anomalous entities themselves, which can be controlled. This was the first project that had me work in a team, which taught me the importance of maintainable, modular code.",
+        "Image": "https://tr.rbxcdn.com/180DAY-ef253354569ea134294b974db713f946/512/512/Image/Webp/noFilter"
+    }
+]

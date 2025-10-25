@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <script defer src="app.js"></script>
+    <script type="module" defer src="app.js"></script>
 </head>
 <body>
     <nav class="main-navbar">
@@ -179,8 +179,32 @@
         </div>
     </section>
 
-    <section id="projects">
-        <h2>My projects:</h2>
+    <section class="my-projects-block" id="projects">
+        <h2>My projects</h2>
+
+        <div class="computer-monitor">
+            <div class="screen-container">
+                <div class="screen" id="screen">
+                    <a id="project-link" target="_blank" rel="noopener noreferrer"><h3 id="project-name"></h3></a>
+                    
+                    <div class="project-container">
+                        <div class="description-container">
+                            <div class="tags-container" id="tags-container">
+                                <span class="tag"></span><span class="tag"></span><span class="tag"></span>
+                            </div>
+                            <p id="description-text"></p>
+                        </div>
+
+                        <img class="project-image" id="project-image" src="">
+                    </div>
+
+                    <div class="project-selectors">
+                        <button id="back-project">[Back]</button>
+                        <button id="forward-project">[Forward]</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="contact-me">  
