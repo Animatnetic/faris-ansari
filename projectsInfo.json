@@ -11,7 +11,7 @@
         "Link": "https://tossed-away.vercel.app/",
         "Tags": ["AI/ML", "Full Stack", "Hackathon"],
         "Description": "ToSsed! is a tool used to summarize and rate inputted Terms of Service text. This summary is ordered in terms of severity, with major, moderate, and minor infractions. It was part of the Falcon hackathon by lablab.ai, where I was among the first few developers to use the UAE's very own Falcon-180B LLM.",
-        "Image": "TossedLogo.svg"
+        "Image": "ToSsedLogo.svg"
     }, 
     {
         "Name": "Black Ridge",
