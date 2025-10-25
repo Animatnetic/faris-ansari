@@ -1,5 +1,7 @@
 import projectsInfo from "./projectsInfo.json" with { type: "json" };
 
+console.log("To add Contact Me")
+
 const binaryChars = ["0", "1"]; // Characters I literally only want to be scrambled are 0 and 1
 var decipheringElements = []; // Array which stores the element that the "decoding" animation is currently doing the animaiton
 
